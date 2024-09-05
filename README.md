@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	        	<img src="${s.url}">
 			</a>` : document.getElementById("result").innerText = `Upload failed: ${s.msg}`
         } catch (r) {
-          document.getElementById("result").innerText = `Error: ${r.message}`
+          document.getElementById("result").innerText = `Error: ${r.msg}`
         }
       });
     </script>
