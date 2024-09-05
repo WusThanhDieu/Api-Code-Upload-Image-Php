@@ -171,23 +171,3 @@ class WsUpload
     }
 }
 $uploader = new \App\Upload\WsUpload();
-// EXAMPLE USE WSUPLOAD IMAGE
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (isset($_FILES["file"]) && $_FILES["file"]["error"] === UPLOAD_ERR_OK) {
-        $picture = $_FILES["file"]["tmp_name"];
-        try {
-            $res = $uploader->imgbb($picture);
-            die(json_encode(["status" => "success", "url" => $res]));
-        } catch (\Exception $e) {
-            die(json_encode(["status" => "error", "msg" => $e->getMessage()]));
-        }
-    } else {
-        die(
-            json_encode([
-                "status" => "error",
-                "msg" =>
-                    "No file uploaded or there was an error during upload.",
-            ])
-        );
-    }
-}
