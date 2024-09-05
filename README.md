@@ -2,7 +2,7 @@
 
 ### Example of uploading an image using an external API
 
-### Example PHP:
+### PHP:
 ```php
 // EXAMPLE USE WSUPLOAD IMAGE
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ```
-### Example HTML/JavaScript:
+### HTML/JavaScript:
 ```html
 <!DOCTYPE html>
 <html lang="en">
