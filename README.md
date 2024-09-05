@@ -1,3 +1,32 @@
+# Api-Code-Upload-Image-Php
+
+### Example of uploading an image using an external API
+
+### Example PHP:
+```php
+// EXAMPLE USE WSUPLOAD IMAGE
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (isset($_FILES["file"]) && $_FILES["file"]["error"] === UPLOAD_ERR_OK) {
+        $picture = $_FILES["file"]["tmp_name"];
+        try {
+            $res = $uploader->imgbb($picture); // call method
+            die(json_encode(["status" => "success", "url" => $res]));
+        } catch (\Exception $e) {
+            die(json_encode(["status" => "error", "msg" => $e->getMessage()]));
+        }
+    } else {
+        die(
+            json_encode([
+                "status" => "error",
+                "msg" =>
+                    "No file uploaded or there was an error during upload.",
+            ])
+        );
+    }
+}
+```
+### Example HTML/JavaScript:
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,3 +67,4 @@
     </script>
   </body>
 </html>
+```
