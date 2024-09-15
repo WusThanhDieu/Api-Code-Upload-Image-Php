@@ -114,7 +114,7 @@ class WsUpload
             "action" => "upload",
         ]);
         if (isset($res["image"]["url"])) {
-            return $res["image"]["url"];
+          return $res["image"]["image"]["url"];
         }
         throw new \Exception("Failed upload from ImgBB");
     }
