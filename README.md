@@ -4,7 +4,7 @@
 
 ### PHP:
 ```php
-// EXAMPLE USE WSUPLOAD IMAGE
+$uploader = new \App\Upload\WsUpload();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_FILES["file"]) && $_FILES["file"]["error"] === UPLOAD_ERR_OK) {
         $picture = $_FILES["file"]["tmp_name"];
