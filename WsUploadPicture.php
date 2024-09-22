@@ -170,4 +170,3 @@ class WsUpload
         throw new \Exception("Failed upload from im_ge: " . json_encode($res));
     }
 }
-$uploader = new \App\Upload\WsUpload();
